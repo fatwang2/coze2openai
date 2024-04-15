@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "app.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/v1/chat/completions",
+        "dest": "/app.js",
+        "methods": ["POST"]
+      }
+    ]
+  }
