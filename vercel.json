@@ -11,6 +11,11 @@
         "src": "/v1/chat/completions",
         "dest": "/app.js",
         "methods": ["POST"]
+      },
+      {
+        "src": "/",
+        "dest": "/app.js",
+        "methods": ["GET"]
       }
     ]
   }
