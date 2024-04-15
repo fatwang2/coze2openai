@@ -1,7 +1,7 @@
 ## COZE2OPENAI
 **Use Coze on your favorite OpenAI client.**
 
-This project converts the Coze API to the OpenAI API format, giving you access to Coze's LLMs, knowledge base, tools, and workflows within your preferred OpenAI clients.
+This project converts the Coze API to the OpenAI API format, giving you access to Coze's LLMs, knowledge base, plugins, and workflows within your preferred OpenAI clients.
 
 
 ## Features
@@ -11,10 +11,10 @@ This project converts the Coze API to the OpenAI API format, giving you access t
 
 ## Deployment
 ### Zeabur
-[![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com/templates/92RLEZ?referralCode=fatwang2)
+[![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com/templates/BZ515Z?referralCode=fatwang2)
 
 ### Vercel
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/fatwang2/Coze2openai&env=Coze_API_URL&envDescription=https://api.Coze.ai/v1)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/fatwang2/coze2openai&env=BOT_ID&envDescription=COZE_BOT_ID)
 
 **Note:** Vercel's serverless functions have a 10-second timeout limit.
 
