@@ -1,4 +1,4 @@
-## COZE2OPENAI
+## C2O
 **Use Coze on your favorite OpenAI client.**
 
 This project converts the Coze API to the OpenAI API format, giving you access to Coze's LLMs, knowledge base, plugins, and workflows within your preferred OpenAI clients.
@@ -8,6 +8,18 @@ This project converts the Coze API to the OpenAI API format, giving you access t
 - Convert Coze API into an OpenAI API
 - Support streaming and blocking
 - Support Chatbots API on Coze
+
+## Preparation
+1. Register with Coze and obtain your API token
+![cozeapitoken](pictures/token.png)
+
+2. Create your bot and publish it to the API
+![cozeapi](pictures/api.png)
+
+3. Obtain the bot's ID,the number after the bot parameter, and configure it as an environment variable
+```bash
+https://www.coze.com/space/73428668341****/bot/73428668*****
+```
 
 ## Deployment
 ### Zeabur
@@ -20,13 +32,9 @@ This project converts the Coze API to the OpenAI API format, giving you access t
 
 
 ### Local Deployment
-1. Coze API:
-   - Head over to the API Tokens section and click on "Add New Token" to whip up a new token.
-   - Select "Bot Publish" to get your bot out there.
-   - Enable API access for your bot by choosing "Public your bot to API."
-   - Pop into your project’s `.env` file and either add `BOT_ID` environment variable with your bot's ID.
+1. Set the environment variable on `.env` file
 ```bash
-BOT_ID=
+BOT_ID=xxxx
 ```
 
 2. Install dependencies 
