@@ -20,7 +20,11 @@ This project converts the Coze API to the OpenAI API format, giving you access t
 
 
 ### Local Deployment
-1. Set the environment variable in the .env file
+1. Coze API:
+   - Head over to the API Tokens section and click on "Add New Token" to whip up a new token.
+   - Select "Bot Publish" to get your bot out there.
+   - Enable API access for your bot by choosing "Public your bot to API."
+   - Pop into your project’s `.env` file and either add `BOT_ID` environment variable with your bot's ID.
 ```bash
 BOT_ID=
 ```
