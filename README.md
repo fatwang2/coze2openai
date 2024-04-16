@@ -31,12 +31,12 @@ BOT_ID=
 
 2. Install dependencies 
 ```bash
-npm install
+pnpm install
 ```
 
 3. Run the project
 ```bash
-npm start
+pnpm start
 ```
 
 ## Usage
