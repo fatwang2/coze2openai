@@ -28,6 +28,9 @@ https://www.coze.com/space/73428668341****/bot/73428668*****
 ### Vercel
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/fatwang2/coze2openai&env=BOT_ID&envDescription=COZE_BOT_ID)
 
+### Railway
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/yM5tQL?referralCode=mDim7U)
+
 **Note:** Vercel's serverless functions have a 10-second timeout limit.
 
 
