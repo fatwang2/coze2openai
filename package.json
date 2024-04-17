@@ -1,7 +1,7 @@
 {
-  "name": "dify2openai",
+  "name": "coze2openai",
   "version": "1.0.0",
-  "description": "turn dify api into openai",
+  "description": "turn coze api into openai",
   "main": "app.js",
   "type": "module",
   "scripts": {

@@ -1,5 +1,5 @@
 # C2O
-**简体中文** · <a href="https://github.com/He0607/coze2openai/blob/main/README.md">English</a>  
+[English](README.md) · **中文** 
 
 **在您喜爱的 OpenAI 客户端上使用 Coze.**
 
@@ -81,15 +81,15 @@ console.log(data);
 *   图像支持
 *   音频转文字
 *   文本转语音
-*   Docker 支持
+*   Docker 部署
 *   工作流机器人
 *   变量支持
 
 **现在可用**
 *   持续对话
-*   Zeabur＆Vercel 部署
-*   流式传输和阻塞
-*   Coze 上的插件
+*   Zeabur＆Vercel&Railway 部署
+*   流式和非流式传输
+*   Coze 插件
 
 # 联系
 如有任何问题或反馈，请随时联系

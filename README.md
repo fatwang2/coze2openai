@@ -1,10 +1,9 @@
 ## C2O
-**English**·<a href="https://github.com/He0607/coze2openai/blob/main/README_CN.md">中文</a> 
+**English** · [中文](README_CN.md) 
 
 **Use Coze on your favorite OpenAI client.**
 
 This project converts the Coze API to the OpenAI API format, giving you access to [Coze](https://www.coze.com) LLMs, knowledge base, plugins, and workflows within your preferred OpenAI clients. 
-
 
 ## Features
 - Convert Coze API into an OpenAI API
@@ -30,10 +29,11 @@ https://www.coze.com/space/73428668341****/bot/73428668*****
 ### Vercel
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/fatwang2/coze2openai&env=BOT_ID&envDescription=COZE_BOT_ID)
 
+**Note:** Vercel's serverless functions have a 10-second timeout limit.
+
 ### Railway
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/yM5tQL?referralCode=mDim7U)
 
-**Note:** Vercel's serverless functions have a 10-second timeout limit.
 
 
 ### Local Deployment
@@ -90,7 +90,7 @@ This project provides some additional configuration items set with environment v
 
 **Available Now**
 *   Continuous dialogue
-*   Zeabur & Vercel deployment
+*   Zeabur & Vercel & Railway deployment
 *   Streaming & Blocking
 *   Plugins on Coze
 
