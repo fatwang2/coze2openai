@@ -1,4 +1,7 @@
 # C2O
+| <a href="https://github.com/He0607/coze2openai/blob/main/README.md">中文</a> | <a href="https://github.com/He0607/coze2openai/blob/main/README_EN.md">English</a> | 
+| --- | --- |
+
 **在您喜爱的 OpenAI 客户端上使用 Coze.**
 
 该项目将 Coze API 转换为 OpenAI API 格式，使您可以在您喜爱的 OpenAI 客户端中访问 [Coze](https://www.coze.com) 的LLMs、知识库、插件和工作流程.
