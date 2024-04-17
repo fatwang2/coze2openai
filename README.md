@@ -4,7 +4,7 @@
 
 **Use Coze on your favorite OpenAI client.**
 
-This project converts the Coze API to the OpenAI API format, giving you access to Coze's LLMs, knowledge base, plugins, and workflows within your preferred OpenAI clients.
+This project converts the Coze API to the OpenAI API format, giving you access to [Coze](https://www.coze.com) LLMs, knowledge base, plugins, and workflows within your preferred OpenAI clients.
 
 
 ## Features
@@ -13,7 +13,7 @@ This project converts the Coze API to the OpenAI API format, giving you access t
 - Support Chatbots API on Coze
 
 ## Preparation
-1. Register with Coze and obtain your API token
+1. Register with [Coze](https://www.coze.com) and obtain your API token
 ![cozeapitoken](pictures/token.png)
 
 2. Create your bot and publish it to the API
