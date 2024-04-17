@@ -1,5 +1,5 @@
 ## C2O
- <a href="https://github.com/He0607/coze2openai/blob/main/README.md">English</a> · <a href="https://github.com/He0607/coze2openai/blob/main/README_CN.md">中文</a> 
+**English**·<a href="https://github.com/He0607/coze2openai/blob/main/README_CN.md">中文</a> 
 
 **Use Coze on your favorite OpenAI client.**
 
