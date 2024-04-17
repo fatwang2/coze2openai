@@ -1,5 +1,5 @@
 # C2O
-| <a href="https://github.com/He0607/coze2openai/blob/main/README.md">中文</a> | <a href="https://github.com/He0607/coze2openai/blob/main/README_EN.md">English</a> | 
+| <a href="https://github.com/He0607/coze2openai/blob/main/README.md">English</a> | <a href="https://github.com/He0607/coze2openai/blob/main/README_CN.md">中文</a> | 
 | --- | --- |
 
 **在您喜爱的 OpenAI 客户端上使用 Coze.**
