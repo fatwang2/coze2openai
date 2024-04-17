@@ -1,10 +1,9 @@
 ## C2O
-| <a href="https://github.com/He0607/coze2openai/blob/main/README.md">English</a> | <a href="https://github.com/He0607/coze2openai/blob/main/README_CN.md">中文</a> | 
-| --- | --- |
+ <a href="https://github.com/He0607/coze2openai/blob/main/README.md">English</a> · <a href="https://github.com/He0607/coze2openai/blob/main/README_CN.md">中文</a> 
 
 **Use Coze on your favorite OpenAI client.**
 
-This project converts the Coze API to the OpenAI API format, giving you access to [Coze](https://www.coze.com) LLMs, knowledge base, plugins, and workflows within your preferred OpenAI clients.
+This project converts the Coze API to the OpenAI API format, giving you access to [Coze](https://www.coze.com) LLMs, knowledge base, plugins, and workflows within your preferred OpenAI clients. 
 
 
 ## Features
