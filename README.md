@@ -8,7 +8,7 @@ This project converts the Coze API to the OpenAI API format, giving you access t
 ## Features
 - Convert Coze API into an OpenAI API
 - Support streaming and blocking
-- Supports multi-robot switching
+- Supports multi-bot switching
 
 ## Preparation
 1. Register with [Coze](https://www.coze.com) and obtain your API token
@@ -88,7 +88,7 @@ This project provides some additional configuration items set with environment v
 *   Docker support
 
 **Available Now**
-*   Multi-robot switching
+*   Multi-bot switching
 *   Workflow, Plugins, Knowledge base
 *   Continuous dialogue with the history of chat
 *   Zeabur & Vercel & Railway deployment
