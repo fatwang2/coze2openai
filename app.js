@@ -6,7 +6,8 @@ dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
-const bot_id = process.env.BOT_ID || "";
+const default_bot_id = process.env.BOT_ID || "";
+const botConfig = process.env.BOT_CONFIG ? JSON.parse(process.env.BOT_CONFIG) : {};
 
 app.get("/", (req, res) => {
   res.send(`
@@ -42,6 +43,7 @@ app.post("/v1/chat/completions", async (req, res) => {
   try {
     const data = req.body;
     const messages = data.messages;
+    const model = data.model;
     const chatHistory = [];
     for (let i = 0; i < messages.length - 1; i++) {
       const message = messages[i];
@@ -59,6 +61,8 @@ app.post("/v1/chat/completions", async (req, res) => {
     const queryString = lastMessage.content;
     const stream = data.stream !== undefined ? data.stream : false;
     let requestBody;
+    const bot_id = model && botConfig[model] ? botConfig[model] : default_bot_id;
+
     requestBody = {
       query: queryString,
       stream: stream,

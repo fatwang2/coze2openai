@@ -8,7 +8,7 @@ This project converts the Coze API to the OpenAI API format, giving you access t
 ## Features
 - Convert Coze API into an OpenAI API
 - Support streaming and blocking
-- Support Chatbots API on Coze
+- Supports multi-robot switching
 
 ## Preparation
 1. Register with [Coze](https://www.coze.com) and obtain your API token
@@ -61,7 +61,7 @@ const response = await fetch('http://localhost:3000/v1/chat/completions', {
     'Authorization': 'Bearer YOUR_COZE_API_KEY',
   },
   body: JSON.stringify({
-    model: 'Coze',
+    model: 'model_name',
     messages: [
       { role: 'system', content: 'You are a helpful assistant.' },
       { role: 'user', content: 'Hello, how are you?' },
@@ -78,6 +78,7 @@ This project provides some additional configuration items set with environment v
 | Environment Variable | Required | Description                                                                                                                                                               | Example                                                                                                              |
 | -------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `BOT_ID`     | Yes      | The ID of the bot. Obtain it from the Develop page URL of your bot in Coze. The number after the bot parameter is the bot ID.| `73428668*****`|
+| `BOT_CONFIG`     | No      | Configure different models to correspond to different bot ids to enable fast bot switching on the client side. Models that are not included will request the default BOT_ID | `{"model_name_1": "bot_id_1", "model_name_2": "bot_id_2", "model_name_3": "bot_id_3"}`|
 
 ## Roadmap
 **Coming Soon**
@@ -85,14 +86,13 @@ This project provides some additional configuration items set with environment v
 *   Audio-to-text
 *   Text-to-audio
 *   Docker support
-*   Workflow Bot
-*   Variables support
 
 **Available Now**
-*   Continuous dialogue
+*   Multi-robot switching
+*   Workflow, Plugins, Knowledge base
+*   Continuous dialogue with the history of chat
 *   Zeabur & Vercel & Railway deployment
 *   Streaming & Blocking
-*   Plugins on Coze
 
 ## Contact
 Feel free to reach out for any questions or feedback

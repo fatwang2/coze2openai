@@ -5,10 +5,10 @@
 
 该项目将 Coze API 转换为 OpenAI API 格式，使您可以在您喜爱的 OpenAI 客户端中访问 [Coze](https://www.coze.com) 的LLMs、知识库、插件和工作流程.
 
-# 特点
-- 将 Coze API 转换为 OpenAI API
-- 支持流式和阻塞
-- 在 Coze 上支持 Chatbots API
+# 功能
+- 支持 Coze API 转换为 OpenAI API 格式
+- 支持流式、非流式输出
+- 支持多机器人快速切换
 
 # 准备工作
 1. 在 [Coze](https://www.coze.com)注册并获取您的 API 令牌
@@ -30,6 +30,11 @@ https://www.coze.com/space/73428668341****/bot/73428668*****
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/fatwang2/coze2openai&env=BOT_ID&envDescription=COZE_BOT_ID)
 
 **注意:** Vercel 的无服务器函数有 10 秒的超时限制
+
+
+### Railway
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/yM5tQL?referralCode=mDim7U)
+
 
 # 本地部署
 1. 首先把`.env.template`文件复制改名为`.env`
@@ -58,7 +63,7 @@ const response = await fetch('http://localhost:3000/v1/chat/completions', {
     'Authorization': 'Bearer YOUR_COZE_API_KEY',
   },
   body: JSON.stringify({
-    model: 'Coze',
+    model: 'model_name',
     messages: [
       { role: 'system', content: 'You are a helpful assistant.' },
       { role: 'user', content: 'Hello, how are you?' },
@@ -74,7 +79,9 @@ console.log(data);
 
 | 环境变量 | 必须的 | 描述                                                                                                                                                               | 例子                                                                                                              |
 | -------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `BOT_ID`     | Yes      | 机器人的 ID。从 Coze 中机器人的开发页面 URL 获取它。 bot参数后面的数字是bot ID.| `73428668*****`|
+| `BOT_ID`     | Yes      | 机器人的 ID。从 Coze 中机器人的开发页面 URL 获取它。 bot参数后面的数字是bot id.| `73428668*****`|
+| `BOT_CONFIG`     | No      | 配置模型和机器人ID的对应关系，实现在客户端切换模型来调用不同的机器人的效果。如果调用不在配置文件的模型，则走默认的BOT_ID| `{"model_name_1": "bot_id_1", "model_name_2": "bot_id_2", "model_name_3": "bot_id_3"}`|
+
 
 # 路线图
 **即将推出**
@@ -82,14 +89,13 @@ console.log(data);
 *   音频转文字
 *   文本转语音
 *   Docker 部署
-*   工作流机器人
-*   变量支持
 
 **现在可用**
-*   持续对话
+*   多机器人切换
+*   连续对话，有对话历史
 *   Zeabur＆Vercel&Railway 部署
 *   流式和非流式传输
-*   Coze 插件
+*   Workflow、插件、知识库
 
 # 联系
 如有任何问题或反馈，请随时联系
