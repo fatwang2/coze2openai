@@ -55,6 +55,12 @@ pnpm start
 ```
 
 # 用法
+1. OpenAI 三方客户端
+
+![botgem](pictures/usage.png)
+
+2. 代码里直接调用
+
 ```JavaScript
 const response = await fetch('http://localhost:3000/v1/chat/completions', {
   method: 'POST',

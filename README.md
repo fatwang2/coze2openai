@@ -53,6 +53,12 @@ pnpm start
 ```
 
 ## Usage
+1. OpenAI Clients
+
+![botgem](pictures/usage.png)
+
+2. Code
+
 ```JavaScript
 const response = await fetch('http://localhost:3000/v1/chat/completions', {
   method: 'POST',
