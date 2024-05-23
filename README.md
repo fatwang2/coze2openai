@@ -11,7 +11,7 @@ This project converts the Coze API to the OpenAI API format, giving you access t
 - Supports multi-bot switching
 
 ## Preparation
-1. Register with [Coze](https://www.coze.com) and obtain your API token
+1. Register with [coze.com](https://www.coze.com) or [coze.cn](https://www.coze.cn)and obtain your API token
 ![cozeapitoken](pictures/token.png)
 
 2. Create your bot and publish it to the API
@@ -85,6 +85,7 @@ This project provides some additional configuration items set with environment v
 | -------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `BOT_ID`     | Yes      | The ID of the bot. Obtain it from the Develop page URL of your bot in Coze. The number after the bot parameter is the bot ID.| `73428668*****`|
 | `BOT_CONFIG`     | No      | Configure different models to correspond to different bot ids to enable fast bot switching on the client side. Models that are not included will request the default BOT_ID | `{"model_name_1": "bot_id_1", "model_name_2": "bot_id_2", "model_name_3": "bot_id_3"}`|
+| `COZE_API_BASE`     | No      | Choose coze.com or coze.cn | `api.coze.com, api.coze.cn`|
 
 ## Roadmap
 **Coming Soon**
@@ -94,6 +95,7 @@ This project provides some additional configuration items set with environment v
 *   Docker support
 
 **Available Now**
+*   Coze.cn
 *   Multi-bot switching
 *   Workflow, Plugins, Knowledge base
 *   Continuous dialogue with the history of chat

@@ -6,6 +6,7 @@ dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
+const coze_api_base = process.env.COZE_API_BASE || "api.coze.com";
 const default_bot_id = process.env.BOT_ID || "";
 const botConfig = process.env.BOT_CONFIG ? JSON.parse(process.env.BOT_CONFIG) : {};
 var corsHeaders = {
@@ -87,8 +88,8 @@ app.post("/v1/chat/completions", async (req, res) => {
       bot_id: bot_id,
       chat_history: chatHistory
     };
-
-    const resp = await fetch("https://api.coze.com/open_api/v2/chat", {
+    const coze_api_url = `https://${coze_api_base}/open_api/v2/chat`;
+    const resp = await fetch(coze_api_url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
