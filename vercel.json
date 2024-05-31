@@ -8,9 +8,9 @@
     ],
     "routes": [
       {
-        "src": "/v1/chat/completions",
+        "src": "/v1/(.*)",
         "dest": "/app.js",
-        "methods": ["POST"]
+        "methods": ["OPTIONS", "POST"]
       },
       {
         "src": "/",
