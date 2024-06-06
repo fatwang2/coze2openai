@@ -252,4 +252,7 @@ app.post("/v1/chat/completions", async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 3000);
+const server = app.listen(process.env.PORT || 3000, function () {
+  let port = server.address().port
+  console.log('Ready! Listening all IP, port: %s. Example: at http://localhost:%s', port, port)
+});
