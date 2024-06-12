@@ -256,4 +256,118 @@ app.post("/v1/chat/completions", async (req, res) => {
   }
 });
 
+app.post("/siri/gpt", async (req, res) => {
+  const authHeader =
+    req.headers["authorization"] || req.headers["Authorization"];
+    console.log("heaeder=",authHeader)
+  if (!authHeader) {
+    return res.status(401).json({
+      code: 401,
+      errmsg: "Unauthorized.",
+    });
+  } else {
+    const token = authHeader.split(" ")[1];
+    if (!token) {
+      return res.status(401).json({
+        code: 401,
+        errmsg: "Unauthorized.",
+      });
+    }
+  }
+  try {
+    const data = req.body;
+    const message = data.message;
+    const type = data.type
+
+  
+    const requestBody = {
+      query: message,
+      stream: false,
+      conversation_id: '',
+      user: 'apiuser',
+      bot_id: '7337201579969314825',
+      chat_history: [
+        {
+          role: 'system',
+          content: '请你调用<GPT-4o>插件跟我交互',
+          content_type: 'text'
+        }
+      ]
+    };
+
+
+    const coze_api_url = `https://${coze_api_base}/open_api/v2/chat`;
+    console.log('## base=',coze_api_url,'## requestBody=',requestBody)
+    const resp = await fetch(coze_api_url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${authHeader.split(" ")[1]}`,
+      },
+      body: JSON.stringify(requestBody),
+    });
+
+      resp
+        .json()
+        .then((data) => {
+          console.log('==return data==',data)
+          if (data.code === 0 && data.msg === "success") {
+            const messages = data.messages;
+            const answerMessage = messages.find(
+              (message) =>
+                message.role === "assistant" && message.type === "answer"
+            );
+
+            if (answerMessage) {
+              const result = answerMessage.content.trim();
+              const usageData = {
+                prompt_tokens: 100,
+                completion_tokens: 10,
+                total_tokens: 110,
+              };
+              const chunkId = `chatcmpl-${Date.now()}`;
+              const chunkCreated = Math.floor(Date.now() / 1000);
+
+              const formattedResponse = {
+                id: chunkId,
+                object: "chat.completion",
+                created: chunkCreated,
+                model: "GPT-4o",
+                result: result,
+                choices: [
+                  {
+                    index: 0,
+                    message: {
+                      role: "assistant",
+                      content: result,
+                    },
+                    logprobs: null,
+                    finish_reason: "stop",
+                  },
+                ],
+                usage: usageData,
+                system_fingerprint: "fp_2f57f81c11",
+              };
+              const jsonResponse = JSON.stringify(formattedResponse, null, 2);
+              res.set("Content-Type", "application/json");
+              res.send(jsonResponse);
+            } else {
+              res.status(500).json({ error: "No answer message found." });
+            }
+          } else {
+            res
+              .status(500)
+              .json({ error: "Unexpected response from Coze API." });
+          }
+        })
+        .catch((error) => {
+          console.error("Error parsing JSON:", error);
+          res.status(500).json({ error: "Error parsing JSON response." });
+        });
+    
+  } catch (error) {
+    console.error("Error:", error);
+  }
+});
+
 app.listen(process.env.PORT || 3000);
