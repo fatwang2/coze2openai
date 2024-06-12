@@ -1,5 +1,5 @@
 # 使用官方Node.js的Docker镜像作为基础镜像
-FROM node:14
+FROM node:14-alpine
 
 # 设置工作目录
 WORKDIR /usr/src/app
@@ -20,7 +20,6 @@ EXPOSE 3000
 ENV NODE_ENV=production
 ENV COZE_API_KEY=pat_gOllUbdnXVFwRq48K7qQ8KwCMkdDV6G8jL1tZgrU7HxgkE4shaAlghe7eQJTFzI7
 ENV BOT_ID=7337201579969314825
-ENV BOT_CONFIG={"model_name_1": "bot_id_1", "model_name_2": "bot_id_2", "model_name_3": "bot_id_3"}
 ENV COZE_API_BASE=api.coze.cn
 # 如果有其他环境变量，也在这里设置
 
