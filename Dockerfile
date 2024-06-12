@@ -19,6 +19,9 @@ EXPOSE 3000
 # 定义环境变量，这里需要根据实际情况设置
 ENV NODE_ENV=production
 ENV COZE_API_KEY=pat_gOllUbdnXVFwRq48K7qQ8KwCMkdDV6G8jL1tZgrU7HxgkE4shaAlghe7eQJTFzI7
+ENV BOT_ID=7337201579969314825
+ENV BOT_CONFIG={"model_name_1": "bot_id_1", "model_name_2": "bot_id_2", "model_name_3": "bot_id_3"}
+ENV COZE_API_BASE=api.coze.cn
 # 如果有其他环境变量，也在这里设置
 
 # 启动应用的命令，这里使用npm start

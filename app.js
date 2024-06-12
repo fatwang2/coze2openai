@@ -6,8 +6,9 @@ dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
-const coze_api_base = process.env.COZE_API_BASE || "api.coze.com";
-const default_bot_id = process.env.BOT_ID || "";
+console.log("** bodyParse=",bodyParser.json(),"** Process Env=",process.env)
+const coze_api_base = process.env.COZE_API_BASE || "api.coze.cn";
+const default_bot_id = process.env.BOT_ID || "7337201579969314825";
 const botConfig = process.env.BOT_CONFIG ? JSON.parse(process.env.BOT_CONFIG) : {};
 var corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -43,6 +44,7 @@ app.get("/", (req, res) => {
 app.post("/v1/chat/completions", async (req, res) => {
   const authHeader =
     req.headers["authorization"] || req.headers["Authorization"];
+    console.log("heaeder=",authHeader)
   if (!authHeader) {
     return res.status(401).json({
       code: 401,
@@ -89,6 +91,7 @@ app.post("/v1/chat/completions", async (req, res) => {
       chat_history: chatHistory
     };
     const coze_api_url = `https://${coze_api_base}/open_api/v2/chat`;
+    console.log('## base=',coze_api_url,'## requestBody=',requestBody)
     const resp = await fetch(coze_api_url, {
       method: "POST",
       headers: {
@@ -194,6 +197,7 @@ app.post("/v1/chat/completions", async (req, res) => {
       resp
         .json()
         .then((data) => {
+          console.log('==return data==',data)
           if (data.code === 0 && data.msg === "success") {
             const messages = data.messages;
             const answerMessage = messages.find(
