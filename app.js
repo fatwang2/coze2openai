@@ -61,6 +61,7 @@ app.post("/v1/chat/completions", async (req, res) => {
     const data = req.body;
     const messages = data.messages;
     const model = data.model;
+    const user = data.user !== undefined ? data.user : "apiuser";
     const chatHistory = [];
     for (let i = 0; i < messages.length - 1; i++) {
       const message = messages[i];
@@ -84,7 +85,7 @@ app.post("/v1/chat/completions", async (req, res) => {
       query: queryString,
       stream: stream,
       conversation_id: "",
-      user: "apiuser",
+      user: user,
       bot_id: bot_id,
       chat_history: chatHistory
     };
