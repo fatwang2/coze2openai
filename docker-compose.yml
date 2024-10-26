@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - BOT_ID=${BOT_ID}
+      - BOT_CONFIG=${BOT_CONFIG}
+      - COZE_API_BASE=${COZE_API_BASE}

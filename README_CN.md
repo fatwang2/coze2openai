@@ -31,10 +31,42 @@ https://www.coze.com/space/73428668341****/bot/73428668*****
 
 **注意:** Vercel 的无服务器函数有 10 秒的超时限制
 
-
-### Railway
+## Railway
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/yM5tQL?referralCode=mDim7U)
 
+## Docker部署
+
+1. 确保您的机器上安装了Docker和Docker Compose。
+
+2. 克隆项目仓库：
+   ```
+   git clone https://github.com/your-username/coze2openai.git
+   cd coze2openai
+   ```
+
+3. 创建并配置`.env`文件：
+   ```
+   cp .env.template .env
+   ```
+   编辑`.env`文件，填入您的BOT_ID和其他必要的配置。
+
+4. 构建并启动Docker容器：
+   ```
+   docker-compose up -d
+   ```
+
+5. 访问`http://localhost:3000`来确认服务是否正常运行。
+
+要停止服务，运行：
+```
+docker-compose down
+```
+
+注意：Dockerfile中使用了淘宝NPM镜像源，你可以注释掉或替换其他源：
+```Dockerfile
+# RUN npm config set registry https://registry.npmmirror.com
+# RUN pnpm config set registry https://registry.npmmirror.com
+```
 
 # 本地部署
 1. 首先把`.env.template`文件复制改名为`.env`
@@ -95,7 +127,6 @@ console.log(data);
 *   图像支持
 *   音频转文字
 *   文本转语音
-*   Docker 部署
 
 **现在可用**
 *   支持 coze.cn
@@ -104,6 +135,7 @@ console.log(data);
 *   Zeabur＆Vercel&Railway 部署
 *   流式和非流式传输
 *   Workflow、插件、知识库
+*   Docker 部署
 
 # 联系
 如有任何问题或反馈，请随时联系

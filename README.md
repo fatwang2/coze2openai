@@ -3,7 +3,7 @@
 
 **Use Coze on your favorite OpenAI client.**
 
-This project converts the Coze API to the OpenAI API format, giving you access to [Coze](https://www.coze.com) LLMs, knowledge base, plugins, and workflows within your preferred OpenAI clients. 
+This project converts the Coze API to the OpenAI API format, giving you access to [Coze](https://www.coze.com) LLMs, knowledge base, plugins, and workflows within your preferred OpenAI clients. 
 
 ## Features
 - Convert Coze API into an OpenAI API
@@ -34,7 +34,39 @@ https://www.coze.com/space/73428668341****/bot/73428668*****
 ### Railway
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/yM5tQL?referralCode=mDim7U)
 
+### Docker Deployment
 
+1. Ensure Docker and Docker Compose are installed on your machine.
+
+2. Clone the project repository:
+   ```
+   git clone https://github.com/your-username/coze2openai.git
+   cd coze2openai
+   ```
+
+3. Create and configure the `.env` file:
+   ```
+   cp .env.template .env
+   ```
+   Edit the `.env` file and fill in your BOT_ID and other necessary configurations.
+
+4. Build and start the Docker container:
+   ```
+   docker-compose up -d
+   ```
+
+5. Visit `http://localhost:3000` to confirm that the service is running correctly.
+
+To stop the service, run:
+```
+docker-compose down
+```
+
+Note: The Dockerfile uses Taobao NPM mirror, you can comment out or replace other different mirror:
+```Dockerfile
+# RUN npm config set registry https://registry.npmmirror.com
+# RUN pnpm config set registry https://registry.npmmirror.com
+```
 
 ### Local Deployment
 1. Set the environment variable on `.env` file
@@ -92,7 +124,6 @@ This project provides some additional configuration items set with environment v
 *   Image support
 *   Audio-to-text
 *   Text-to-audio
-*   Docker support
 
 **Available Now**
 *   Coze.cn
@@ -101,6 +132,7 @@ This project provides some additional configuration items set with environment v
 *   Continuous dialogue with the history of chat
 *   Zeabur & Vercel & Railway deployment
 *   Streaming & Blocking
+*   Docker deployment
 
 ## Contact
 Feel free to reach out for any questions or feedback
