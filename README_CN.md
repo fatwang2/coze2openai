@@ -64,8 +64,8 @@ docker-compose down
 
 注意：Dockerfile中使用了淘宝NPM镜像源，你可以注释掉或替换其他源：
 ```Dockerfile
-# RUN npm config set registry https://registry.npmmirror.com
-# RUN pnpm config set registry https://registry.npmmirror.com
+ENV NPM_CONFIG_REGISTRY=https://registry.npmmirror.com/
+ENV PNPM_REGISTRY=https://registry.npmmirror.com/
 ```
 
 # 本地部署

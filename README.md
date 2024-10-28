@@ -64,8 +64,8 @@ docker-compose down
 
 Note: The Dockerfile uses Taobao NPM mirror, you can comment out or replace other different mirror:
 ```Dockerfile
-# RUN npm config set registry https://registry.npmmirror.com
-# RUN pnpm config set registry https://registry.npmmirror.com
+ENV NPM_CONFIG_REGISTRY=https://registry.npmmirror.com/
+ENV PNPM_REGISTRY=https://registry.npmmirror.com/
 ```
 
 ### Local Deployment
